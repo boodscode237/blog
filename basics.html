@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Basics : Variables, Chaîne de caractères, Nombres et Commentaires. &#8212; Apprendre python simple</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'basics';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="prev" title="Markdown Files" href="markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Apprendre python simple - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Apprendre python simple - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenue sur le Blog Officiel de Monthy Python With Brice 🎉
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Python Basics : Variables, Chaîne de caractères, Nombres et Commentaires.</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/boodscode237/apprendre_python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/boodscode237/apprendre_python/issues/new?title=Issue%20on%20page%20%2Fbasics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/basics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python Basics : Variables, Chaîne de caractères, Nombres et Commentaires.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>Variables</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variables"><strong>Noms de variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notre-premier-bug-name-errors"><strong>Notre premier bug 🐛: <em>Name Errors</em></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaine-de-caracteres"><strong>Chaîne de caractères</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-avec-chaines"><strong>Opérations avec chaînes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexation-et-decoupage"><strong>Indexation et découpage:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation"><strong>Concaténation:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replication"><strong>Réplication:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recherche"><strong>Recherche:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacement"><strong>Remplacement</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-casse"><strong>Conversion de casse</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#suppression-d-espaces-superflus"><strong>Suppression d’espaces superflus</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#division"><strong>Division</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-d-appartenance"><strong>Vérification d’appartenance</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ajout-d-espaces-aux-chaines-de-caracteres-avec-des-tabulations-ou-des-sauts-de-ligne"><strong>Ajout d’espaces aux chaînes de caractères avec des tabulations ou des sauts de ligne</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings-chaines-litterales-formatees"><strong>f-strings (chaînes littérales formatées):</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formatage-de-chaines"><strong>Formatage de chaînes</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-d-erreurs-pouvant-survenir-lors-des-operations-avec-des-chaines-et-solutions"><strong>Types d’erreurs pouvant survenir lors des opérations avec des chaînes et solutions</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror"><strong>IndexError</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror"><strong>TypeError:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vous-meme"><strong>Vous-même</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre"><strong>Nombre</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-nombres">Types de nombres :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traits-de-soulignement-dans-les-nombres">Traits de soulignement dans les nombres :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#affectations-multiples">Affectations multiples :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essayez-vous-meme-testez-vos-connaissances">Essayez vous-même (Testez vos connaissances)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commentaires-en-python-et-la-philosophie-de-python-zen-of-python">Commentaires en Python et la Philosophie de Python (Zen of Python)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-les-commentaires-sont-ils-importants">Pourquoi les commentaires sont-ils importants ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-philosophie-de-python-zen-of-python">La Philosophie de Python (Zen of Python)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-basics-variables-chaine-de-caracteres-nombres-et-commentaires">
+<h1><strong>Python Basics : Variables, Chaîne de caractères, Nombres et Commentaires.</strong><a class="headerlink" href="#python-basics-variables-chaine-de-caracteres-nombres-et-commentaires" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Ce tutoriel vous présente les bases du langage de programmation Python, en commençant par les types de données fondamentaux tels que les nombres et les chaînes de caractères. Vous apprendrez également à créer et utiliser des variables pour stocker des données, et à ajouter des commentaires à votre code pour le rendre plus lisible.</p>
+<p>Ce que vous apprendrez</p>
+<ul class="simple">
+<li><p>Les différents types de données en Python</p></li>
+<li><p>Comment créer et utiliser des variables</p></li>
+<li><p>Les conventions de nommage des variables</p></li>
+<li><p>Comment ajouter des commentaires à votre code</p></li>
+</ul>
+<p>Commençons !</p>
+<p>Nous allons d’abord écrire et exécuter notre première ligne de code en utilisant python.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salut le Monde&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Votre éditeur exécute ce bloc de code via l’interpréteur Python, qui lit le programme et détermine ce que chaque mot du programme signifie. Par exemple, lorsque l’interprète voit le mot <strong>print</strong> suivi de parenthèses, il affiche à l’écran ce qui se trouve entre parenthèses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salut le Monde&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Salut le Monde
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variables">
+<h2><strong>Variables</strong><a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>Essayons d’utiliser une variable dans notre code. Ajouter une nouvelle ligne au début du fichier, et modifier la deuxième ligne</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bonjour le monde Python!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bonjour le monde Python!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour le monde Python!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous avons ajouté une variable nommée message. Chaque variable est liée à une valeur, qui est l’information associée à cette variable. Dans ce cas, la valeur est le texte “<strong>Bonjour le monde Python!</strong>”.</p>
+<p>L’ajout d’une variable rend un peu plus de travail pour l’interpréteur Python. Quand il traite la première ligne, il associe le message variable avec le texte “<strong>Bonjour le monde Python!</strong>”. Quand il atteint la deuxième ligne, il affiche la valeur associée au message à l’écran.</p>
+<p>Ajoutons deux nouvelles lignes de code :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bonjour mon nom est Brice !&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bonjour le monde Python!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bonjour mon nom est Brice !&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour le monde Python!
+Bonjour mon nom est Brice !
+</pre></div>
+</div>
+</div>
+</div>
+<section id="noms-de-variables">
+<h3><strong>Noms de variables</strong><a class="headerlink" href="#noms-de-variables" title="Link to this heading">#</a></h3>
+<p>Vous pouvez nommer une variable n’importe quoi, pourvu qu’elle respecte les trois règles suivantes :</p>
+<ol class="arabic simple">
+<li><p>Elle ne peut s’agir que d’un seul mot.</p></li>
+<li><p>Elle ne peut utiliser que des lettres, des chiffres et le caractère de soulignement (_).</p></li>
+<li><p>Elle ne peut pas commencer par un chiffre.</p></li>
+</ol>
+<p><strong>Noms de variables valides et non valides</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de variable valide</p></th>
+<th class="head"><p>Nom de variable invalide</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>etudiant</p></td>
+<td><p>nom-etudiant (les tirets ne sont pas autorisés)</p></td>
+</tr>
+<tr class="row-odd"><td><p>nomEtudiant</p></td>
+<td><p>nom eltudiant (les espaces ne sont pas autorisés)</p></td>
+</tr>
+<tr class="row-even"><td><p>nom_etudiant</p></td>
+<td><p>1etudiant (ne peut pas commencer par un chiffre)</p></td>
+</tr>
+<tr class="row-odd"><td><p>_code</p></td>
+<td><p>272695 (ne peut pas commencer par un chiffre)</p></td>
+</tr>
+<tr class="row-even"><td><p>MOTDEPASSE</p></td>
+<td><p>motdepa<span class="math notranslate nohighlight">\(se (les caractères spéciaux comme \)</span> ne sont pas autorisés)</p></td>
+</tr>
+<tr class="row-odd"><td><p>etudiant1</p></td>
+<td><p>‘etudiant1’ (les caractères spéciaux comme ‘ ne sont pas autorisés)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Il peut falloir un peu de pratique pour apprendre à créer de bons noms de variables. Au fur et à mesure que vous écrirez plus de programmes et commencerez à lire le code des autres, vous vous améliorerez à trouver des noms significatifs.</p>
+<p>for now we should use variables like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">etudiant</span>
+<span class="n">nom_etudiant</span>
+<span class="n">MOTDEPASSE</span><span class="p">(</span><span class="n">rarement</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="notre-premier-bug-name-errors">
+<h3><strong>Notre premier bug 🐛: <em>Name Errors</em></strong><a class="headerlink" href="#notre-premier-bug-name-errors" title="Link to this heading">#</a></h3>
+<p>Chaque programmeur fait des erreurs, et la plupart font des erreurs tous les jours.
+Faisons notre première erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;Je n’imprimerai pas :)&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phraze</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;Je n’imprimerai pas :)&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">phraze</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;phraze&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’interpréteur fournit un <code class="docutils literal notranslate"><span class="pre">traceback</span></code> lorsqu’un programme ne peut pas s’exécuter avec succès. Un <code class="docutils literal notranslate"><span class="pre">traceback</span></code> est un enregistrement de l’endroit où l’interprète a rencontré des problèmes lors de l’exécution de votre code.</p>
+<p>Voici un exemple du <code class="docutils literal notranslate"><span class="pre">traceback</span></code> fourni par Python après que vous ayez accidentellement mal orthographié le nom d’une variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">a2727afc6712</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">cell</span> <span class="n">line</span><span class="p">:</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">()</span>
+      <span class="mi">1</span> <span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;Je n’imprimerai pas :)&quot;</span>
+<span class="o">----&gt;</span> <span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">phraze</span><span class="p">)</span>
+
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;phraze&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>La sortie signale qu’une erreur se produit à la ligne 2. L’interprète montre cette ligne pour nous aider à repérer rapidement l’erreur et nous indique quel type d’erreur elle a trouvé. IDans ce cas, il a trouvé une erreur de nom et indique que la variable imprimée, <strong>« phraze »</strong>, n’a pas été définie. Python ne peut pas identifier le nom de variable fourni. Une erreur de nom signifie généralement que nous avons oublié de définir la valeur d’une variable avant de l’utiliser, ou que nous avons commis une erreur d’orthographe lors de la saisie du nom de la variable.</p>
+<p>On va réparer notre code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;J’imprimerai :)&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phrase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>J’imprimerai :)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Les noms de variables sont sensibles à la casse, ce qui signifie que le spam, le SPAM, le spam et le sPaM sont quatre variables différentes. C’est une convention Python pour commencer vos variables avec une lettre minuscule.</p>
+<p>🖐🏿Une variable est comme une boîte dans la mémoire de l’ordinateur où vous pouvez stocker une seule valeur. Si vous souhaitez utiliser le résultat d’une expression évaluée plus tard dans votre vous pouvez l’enregistrer dans une variable.🖐🏿</p>
+<p>Cette idée peut être utile les premières fois que vous utilisez une variable, mais ce n’est pas une façon précise de décrire comment les variables sont représentées en interne dans Python. Il est préférable de considérer les variables comme des <strong>étiquettes</strong> que vous pouvez attribuer à des valeurs. Vous pouvez également dire qu’une variable fait <strong>référence</strong> à une certaine valeur.</p>
+<blockquote>
+<div><p><strong>Exemple d’une variable comme étiquette et comme référence en Python</strong></p>
+</div></blockquote>
+<p>Supposons que nous voulons stocker la valeur de la population de la France dans une variable. Nous pouvons le faire comme ceci:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">population_france</span> <span class="o">=</span> <span class="mi">65273111</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, <code class="docutils literal notranslate"><span class="pre">population_france</span></code> est une variable qui sert d’étiquette pour la valeur 65273111. Cette valeur est stockée dans un emplacement mémoire et l’étiquette <code class="docutils literal notranslate"><span class="pre">population_france</span></code> nous permet d’y accéder.</p>
+<blockquote>
+<div><p><strong>Variable comme référence</strong></p>
+</div></blockquote>
+<p>Lorsque nous utilisons une variable pour stocker une valeur, nous ne stockons pas la valeur elle-même dans la variable, mais plutôt une référence à l’emplacement mémoire où la valeur est stockée.</p>
+<p>Par exemple, si nous affectons la valeur de population_france à une nouvelle variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">population_france</span> <span class="o">=</span> <span class="mi">65273111</span>
+
+<span class="n">population_metropole</span> <span class="o">=</span> <span class="n">population_france</span>
+</pre></div>
+</div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">population_metropole</span></code> ne stocke pas une nouvelle copie de la valeur <code class="docutils literal notranslate"><span class="pre">65273111</span></code>. Elle stocke plutôt une référence au même emplacement mémoire que la variable <code class="docutils literal notranslate"><span class="pre">population_france</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population_france</span> <span class="o">=</span> <span class="mi">65273111</span>
+
+<span class="n">population_metropole</span> <span class="o">=</span> <span class="n">population_france</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Essayer par vous-même</strong></p>
+<p><strong>Exercice 1:</strong></p>
+<p>Créez une variable pour stocker la valeur de la population de votre pays.</p>
+<p><strong>Exercice 2:</strong></p>
+<p>Créez une autre variable et affectez-lui la valeur de la variable que vous avez créée dans l’exercice 1.</p>
+<p><strong>Exercice 3:</strong></p>
+<p>Modifiez la valeur de la variable que vous avez créée dans l’exercice 1.</p>
+</section>
+</section>
+<section id="chaine-de-caracteres">
+<h2><strong>Chaîne de caractères</strong><a class="headerlink" href="#chaine-de-caracteres" title="Link to this heading">#</a></h2>
+<p>En Python, les chaînes de caractères (strings) sont des séquences ordonnées d’éléments appelés caractères. Elles jouent un rôle crucial dans la manipulation de texte et constituent un élément fondamental du langage de programmation.</p>
+<p>Tout ce qui est entre guillemets est considéré comme une chaîne en Python, et vous pouvez utiliser des guillemets simples ou doubles autour des chaînes comme celle-ci:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s2">&quot;aa&quot;</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;Bonjour!&#39;</span><span class="p">,</span> <span class="s2">&quot;11 chats&quot;</span>
+</pre></div>
+</div>
+<p>Cette flexibilité vous permet d’utiliser des guillemets et des apostrophes dans votre chaînes :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Il a dit à mon ami: &quot;Le français est une langue populaire !&quot;&#39;</span>
+<span class="s2">&quot;Le footballeur Mbappe est nommé d’après son grand-père.&quot;</span>
+</pre></div>
+</div>
+<section id="operations-avec-chaines">
+<h3><strong>Opérations avec chaînes</strong><a class="headerlink" href="#operations-avec-chaines" title="Link to this heading">#</a></h3>
+<p>Python offre une large gamme d’opérations pour travailler efficacement avec les chaînes de caractères. Voici quelques exemples courants:</p>
+<section id="indexation-et-decoupage">
+<h4><strong>Indexation et découpage:</strong><a class="headerlink" href="#indexation-et-decoupage" title="Link to this heading">#</a></h4>
+<p>Accédez à des caractères individuels ou à des sous-chaînes en utilisant la notation d’indexation. L’indexation commence à partir de 0 (zéro).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bienvenue dans le monde de Python!&quot;</span>
+
+<span class="c1"># Premier caractère</span>
+<span class="n">premier_caractere</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Accède à &quot;B&quot;</span>
+
+<span class="c1"># Sous-chaîne du deuxième au sixième caractère (exclu)</span>
+<span class="n">sous_chaine</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># &quot;ienven&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Bienvenue dans le monde de Python!&quot;</span>
+
+<span class="c1"># Premier caractère</span>
+<span class="n">premier_caractere</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Accède à &quot;B&quot;</span>
+
+<span class="c1"># Sous-chaîne du deuxième au sixième caractère (exclu)</span>
+<span class="n">sous_chaine</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># &quot;ienven&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sous_chaine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bienvenue dans le monde de Python!
+ienven
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="concatenation">
+<h4><strong>Concaténation:</strong><a class="headerlink" href="#concatenation" title="Link to this heading">#</a></h4>
+<p>Combinez deux chaînes de caractères pour en former une nouvelle.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Martin&quot;</span>
+
+<span class="n">nom_complet</span> <span class="o">=</span> <span class="n">prenom</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">nom</span>  <span class="c1"># &quot;Alice Martin&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Martin&quot;</span>
+
+<span class="n">nom_complet</span> <span class="o">=</span> <span class="n">prenom</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">nom</span>  <span class="c1"># &quot;Alice Martin&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nom_complet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice Martin
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="replication">
+<h4><strong>Réplication:</strong><a class="headerlink" href="#replication" title="Link to this heading">#</a></h4>
+<p>Répétez une chaîne un certain nombre de fois.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">slogan</span> <span class="o">=</span> <span class="s2">&quot;Python est génial!&quot;</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># &quot;Python est génial!Python est génial!Python est génial!&quot;</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slogan</span> <span class="o">=</span> <span class="s2">&quot;Python est génial!&quot;</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># &quot;Python est génial!Python est génial!Python est génial!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">slogan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python est génial!Python est génial!Python est génial!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="recherche">
+<h4><strong>Recherche:</strong><a class="headerlink" href="#recherche" title="Link to this heading">#</a></h4>
+<p>Localisez l’occurrence d’une sous-chaîne dans une chaîne plus grande.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;Cette phrase contient le mot &#39;Python&#39;.&quot;</span>
+<span class="n">position</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>  <span class="c1"># Retourne 30 (l&#39;index de la première occurrence)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;Cette phrase contient le mot &#39;Python&#39;.&quot;</span>
+<span class="n">position</span> <span class="o">=</span> <span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>  <span class="c1"># Retourne 30 (l&#39;index de la première occurrence)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="remplacement">
+<h4><strong>Remplacement</strong>:<a class="headerlink" href="#remplacement" title="Link to this heading">#</a></h4>
+<p>Remplacez une sous-chaîne par une autre chaîne.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">citation</span> <span class="o">=</span> <span class="s2">&quot;Le langage Python est puissant et polyvalent.&quot;</span>
+<span class="n">citation_modifiee</span> <span class="o">=</span> <span class="n">citation</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citation</span> <span class="o">=</span> <span class="s2">&quot;Le langage Python est puissant et polyvalent. Python&quot;</span>
+<span class="n">citation_modifiee</span> <span class="o">=</span> <span class="n">citation</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Le langage JavaScript est puissant et polyvalent.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">citation_modifiee</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le langage JavaScript est puissant et polyvalent. JavaScript
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conversion-de-casse">
+<h4><strong>Conversion de casse</strong>:<a class="headerlink" href="#conversion-de-casse" title="Link to this heading">#</a></h4>
+<p>Convertissez les caractères d’une chaîne en majuscules, minuscules ou en une combinaison des deux.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">titre</span> <span class="o">=</span> <span class="s2">&quot;Introduction AUX opérations aveC dEs chaînes&quot;</span>
+<span class="n">titre_majuscules</span> <span class="o">=</span> <span class="n">titre</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>  <span class="c1"># &quot;INTRODUCTION AUX OPERATIONS AVEC DES CHAINES&quot;</span>
+<span class="n">titre_minuscules</span> <span class="o">=</span> <span class="n">titre</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># &quot;introduction aux opérations avec des chaînes&quot;</span>
+<span class="n">titre</span> <span class="o">=</span> <span class="n">titre_minuscules</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="c1"># Introduction Aux Opérations Avec Des Chaînes</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titre</span> <span class="o">=</span> <span class="s2">&quot;Introduction AUX opérations aveC dEs chaînes&quot;</span>
+<span class="n">titre_majuscules</span> <span class="o">=</span> <span class="n">titre</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>  <span class="c1"># &quot;INTRODUCTION AUX OPERATIONS AVEC DES CHAINES&quot;</span>
+<span class="n">titre_minuscules</span> <span class="o">=</span> <span class="n">titre</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># &quot;introduction aux opérations avec des chaînes&quot;</span>
+<span class="n">titre</span> <span class="o">=</span> <span class="n">titre_minuscules</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="c1"># Introduction Aux Opérations Avec Des Chaînes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titre_majuscules</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titre_minuscules</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INTRODUCTION AUX OPÉRATIONS AVEC DES CHAÎNES
+introduction aux opérations avec des chaînes
+Introduction Aux Opérations Avec Des Chaînes
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="suppression-d-espaces-superflus">
+<h4><strong>Suppression d’espaces superflus</strong>:<a class="headerlink" href="#suppression-d-espaces-superflus" title="Link to this heading">#</a></h4>
+<p>Éliminez les espaces au début et à la fin d’une chaîne.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salutation</span> <span class="o">=</span> <span class="s2">&quot;   Bonjour à tous !   &quot;</span>
+<span class="n">salutation_nette</span> <span class="o">=</span> <span class="n">salutation</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># &quot;Bonjour à tous !&quot;</span>
+<span class="n">espace_a_gauche</span> <span class="o">=</span> <span class="n">salutation</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="c1"># &quot; Bonjour à tous !&quot;</span>
+<span class="n">espace_a_droite</span> <span class="o">=</span> <span class="n">salutation</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span> <span class="c1"># &quot;Bonjour à tous ! &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salutation_nette</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">espace_a_gauche</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">espace_a_droite</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salutation</span> <span class="o">=</span> <span class="s2">&quot;   Bonjour à tous !   &quot;</span>
+<span class="n">salutation_nette</span> <span class="o">=</span> <span class="n">salutation</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># &quot;Bonjour à tous !&quot;</span>
+<span class="n">espace_a_gauche</span> <span class="o">=</span> <span class="n">salutation</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="c1"># &quot; Bonjour à tous !&quot;</span>
+<span class="n">espace_a_droite</span> <span class="o">=</span> <span class="n">salutation</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span> <span class="c1"># &quot;Bonjour à tous ! &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salutation_nette</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">espace_a_gauche</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">espace_a_droite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour à tous !
+   Bonjour à tous !
+Bonjour à tous !   
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="division">
+<h4><strong>Division</strong>:<a class="headerlink" href="#division" title="Link to this heading">#</a></h4>
+<p>Divisez une chaîne en une liste de sous-chaînes en fonction d’un séparateur.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span> <span class="o">=</span> <span class="s2">&quot;Farine, Sucre, Œufs, Lait&quot;</span>
+<span class="n">liste_ingredients</span> <span class="o">=</span> <span class="n">ingredients</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>  <span class="c1"># [&quot;Farine&quot;, &quot;Sucre&quot;, &quot;Œufs&quot;, &quot;Lait&quot;]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ingredients</span> <span class="o">=</span> <span class="s2">&quot;Farine, Sucre, Œufs, Lait&quot;</span>
+<span class="n">liste_ingredients</span> <span class="o">=</span> <span class="n">ingredients</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>  <span class="c1"># [&quot;Farine&quot;, &quot;Sucre&quot;, &quot;Œufs&quot;, &quot;Lait&quot;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste_ingredients</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Farine&#39;, &#39;Sucre&#39;, &#39;Œufs&#39;, &#39;Lait&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verification-d-appartenance">
+<h4><strong>Vérification d’appartenance</strong>:<a class="headerlink" href="#verification-d-appartenance" title="Link to this heading">#</a></h4>
+<p>Déterminez si une sous-chaîne est présente dans une chaîne plus grande.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Python est un langage de programmation polyvalent.&quot;</span>
+<span class="n">contient_python</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span> <span class="ow">in</span> <span class="n">description</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Python est un langage de programmation polyvalent.&quot;</span>
+<span class="n">contient_python</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span> <span class="ow">in</span> <span class="n">description</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contient_python</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ajout-d-espaces-aux-chaines-de-caracteres-avec-des-tabulations-ou-des-sauts-de-ligne">
+<h4><strong>Ajout d’espaces aux chaînes de caractères avec des tabulations ou des sauts de ligne</strong><a class="headerlink" href="#ajout-d-espaces-aux-chaines-de-caracteres-avec-des-tabulations-ou-des-sauts-de-ligne" title="Link to this heading">#</a></h4>
+<p>En Python, les caractères d’espacement, y compris les espaces<code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>, les tabulations <code class="docutils literal notranslate"><span class="pre">(\t)</span></code> et les sauts de ligne <code class="docutils literal notranslate"><span class="pre">(\n)</span></code>, jouent un rôle essentiel dans la mise en forme et la lisibilité de votre code. Voici comment les inclure efficacement dans vos chaînes de caractères :</p>
+<ol class="arabic simple">
+<li><p>Utilisation de chaînes littérales:</p></li>
+</ol>
+<p>Entourez directement les espaces de caractères dans des guillemets simples <code class="docutils literal notranslate"><span class="pre">('')</span></code> ou doubles <code class="docutils literal notranslate"><span class="pre">(&quot;&quot;)</span></code> lors de la construction de la chaîne.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message_avec_tabulations</span> <span class="o">=</span> <span class="s2">&quot;Ce message</span><span class="se">\t</span><span class="s2">a des tabulations.&quot;</span>  <span class="c1"># Sortie : &quot;Ce message    a des tabulations.&quot;</span>
+<span class="n">poème</span> <span class="o">=</span> <span class="s2">&quot;Les roses sont rouges,</span><span class="se">\n</span><span class="s2">Les violettes sont bleues.&quot;</span>  <span class="c1"># Sortie : &quot;Les roses sont rouges,</span>
+                                                             <span class="c1">#          Les violettes sont bleues.&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message_avec_tabulations</span> <span class="o">=</span> <span class="s2">&quot;Ce message</span><span class="se">\t</span><span class="s2">a des tabulations.&quot;</span>  <span class="c1"># Sortie : &quot;Ce message    a des tabulations.&quot;</span>
+<span class="n">poeme</span> <span class="o">=</span> <span class="s2">&quot;Les roses sont rouges,</span><span class="se">\n</span><span class="s2">Les violettes sont bleues.&quot;</span>  <span class="c1"># Sortie : &quot;Les roses sont rouges,</span>
+                                                             <span class="c1">#          Les violettes sont bleues.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message_avec_tabulations</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">poeme</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ce message	a des tabulations.
+Les roses sont rouges,
+Les violettes sont bleues.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Combinez plusieurs chaînes ou variables contenant des espaces en utilisant l’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salutation</span> <span class="o">=</span> <span class="s2">&quot;Bonjour, &quot;</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">salutation_complete</span> <span class="o">=</span> <span class="n">salutation</span> <span class="o">+</span> <span class="n">nom</span>  <span class="c1"># Sortie : &quot;Bonjour, Alice&quot;</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Ceci est une&quot;</span> <span class="o">+</span> <span class="s2">&quot; description longue</span><span class="se">\n</span><span class="s2">en plusieurs lignes.&quot;</span>  <span class="c1"># Sortie : &quot;Ceci est une description longue</span>
+                                                                           <span class="c1">#           en plusieurs lignes.&quot;</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salutation</span> <span class="o">=</span> <span class="s2">&quot;Bonjour, &quot;</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">salutation_complete</span> <span class="o">=</span> <span class="n">salutation</span> <span class="o">+</span> <span class="n">nom</span>  <span class="c1"># Sortie : &quot;Bonjour, Alice&quot;</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Ceci est une&quot;</span> <span class="o">+</span> <span class="s2">&quot; description longue</span><span class="se">\n</span><span class="s2">en plusieurs lignes.&quot;</span>  <span class="c1"># Sortie : &quot;Ceci est une description longue</span>
+                                                                           <span class="c1">#           en plusieurs lignes.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">salutation_complete</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour, Alice
+Ceci est une description longue
+en plusieurs lignes.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="f-strings-chaines-litterales-formatees">
+<h4><strong>f-strings (chaînes littérales formatées):</strong><a class="headerlink" href="#f-strings-chaines-litterales-formatees" title="Link to this heading">#</a></h4>
+<p>Utilisez les <strong>f-strings</strong> (introduites dans Python 3.6) pour un formatage de chaîne plus pratique et pour intégrer des expressions au sein de la chaîne.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">message_formatté</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span>  <span class="c1"># Sortie : &quot;Vous avez 30 ans.&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">message_formatte</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span>  <span class="c1"># Sortie : &quot;Vous avez 30 ans.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message_formatte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vous avez 30 ans.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="formatage-de-chaines">
+<h4><strong>Formatage de chaînes</strong>:<a class="headerlink" href="#formatage-de-chaines" title="Link to this heading">#</a></h4>
+<p>Dans certaines situations, vous voudrez utiliser la valeur d’une variable dans une chaîne. Pour
+Par exemple, vous pouvez vouloir que deux variables représentent respectivement un nom et un âge, puis vous voulez combiner ces valeurs pour afficher quelque chose:</p>
+<p>Insérez des variables et des expressions dans des chaînes de caractères de manière formatée.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">message_formate</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bienvenue, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> ! Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span>  <span class="c1"># &quot;Bienvenue, Alice ! Vous avez 30 ans.&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">message_formate</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bienvenue, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> ! Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span>  <span class="c1"># &quot;Bienvenue, Alice ! Vous avez 30 ans.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message_formate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bienvenue, Alice ! Vous avez 30 ans.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="types-d-erreurs-pouvant-survenir-lors-des-operations-avec-des-chaines-et-solutions">
+<h3><strong>Types d’erreurs pouvant survenir lors des opérations avec des chaînes et solutions</strong><a class="headerlink" href="#types-d-erreurs-pouvant-survenir-lors-des-operations-avec-des-chaines-et-solutions" title="Link to this heading">#</a></h3>
+<p>Lors de l’utilisation des opérations de base avec des chaînes de caractères en Python, plusieurs types d’erreurs peuvent survenir. Voici les plus courantes et leurs solutions:</p>
+<ul class="simple">
+<li><p>IndexError</p></li>
+<li><p>TypeError</p></li>
+</ul>
+<section id="indexerror">
+<h4><strong>IndexError</strong>:<a class="headerlink" href="#indexerror" title="Link to this heading">#</a></h4>
+<p>Cause: Cette erreur se produit lorsque vous essayez d’accéder à un caractère en utilisant un index qui se situe en dehors de la plage valide de la chaîne. N’oubliez pas que l’indexation en Python commence à 0 (zéro).</p>
+<p><em>Exemple:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">index_invalide</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># IndexError: string index out of range</span>
+</pre></div>
+</div>
+<p><em>Solution:</em></p>
+<p>Assurez-vous que l’index que vous utilisez se situe bien dans les limites de la longueur de la chaîne. Vous pouvez utiliser la fonction len() pour obtenir la longueur de la chaîne:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">longueur_message</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">index_valide</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="n">longueur_message</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Accède au dernier caractère</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">index_invalide</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># IndexError: string index out of range</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-29-f55c1384f507&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">index_invalide</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>  <span class="c1"># IndexError: string index out of range</span>
+
+<span class="ne">IndexError</span>: string index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">longueur_message</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">index_valide</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="n">longueur_message</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Accède au dernier caractère</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_valide</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="typeerror">
+<h4><strong>TypeError:</strong><a class="headerlink" href="#typeerror" title="Link to this heading">#</a></h4>
+<p>Cause: Cette erreur se produit lorsque vous tentez d’effectuer une opération sur une chaîne qui n’est pas supportée pour ce type de données. Par exemple, essayer d’effectuer des opérations arithmétiques directement sur des chaînes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;30&quot;</span>
+<span class="n">opération_invalide</span> <span class="o">=</span> <span class="s2">&quot;Bonjour&quot;</span> <span class="o">+</span> <span class="n">age</span>  <span class="c1"># TypeError: can only concatenate str (not &quot;int&quot;) to str</span>
+</pre></div>
+</div>
+<p>Si nécessaire, convertissez la chaîne vers un type de données compatible, en utilisant par exemple int() pour les opérations numériques:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="n">opération_valide</span> <span class="o">=</span> <span class="s2">&quot;Bonjour, vous avez &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age_int</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ans.&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="vous-meme">
+<h3><strong>Vous-même</strong><a class="headerlink" href="#vous-meme" title="Link to this heading">#</a></h3>
+<p>Exercice 1: Créez une chaîne de caractères contenant votre nom et ajoutez-lui un saut de ligne pour l’afficher sur deux lignes différentes.</p>
+<p>Exercice 2: Construisez une chaîne de caractères qui affiche votre citation préférée. Utilisez des tabulations pour indenter chaque ligne de la citation.</p>
+<p>Exercice 3: Combinez des chaînes de caractères et des variables pour former un message d’accueil personnalisé avec votre nom et votre âge. Utilisez des f-strings pour y parvenir.</p>
+<p>Solutions:</p>
+<p>Exercice 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Votre Nom&quot;</span>
+<span class="n">message_sur_deux_lignes</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="se">\n</span><span class="s2">Bonjour !&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message_sur_deux_lignes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Exercice 2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">citation</span> <span class="o">=</span> <span class="s2">&quot;La vie est une suite d&#39;aventures.</span><span class="se">\n\t</span><span class="s2">- Émile Zola&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">citation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Exercice 3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Votre Nom&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">message_accueil</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bienvenue, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> ! Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message_accueil</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nombre">
+<h2><strong>Nombre</strong><a class="headerlink" href="#nombre" title="Link to this heading">#</a></h2>
+<p><strong>Expressions, entiers, Decimaux et traits de soulignement en Python (avec équivalents russes)</strong></p>
+<p>En Python, les expressions permettent d’associer des valeurs, des variables et des opérateurs pour calculer ou manipuler des données. Elles constituent l’élément fondamental de la programmation, vous permettant d’effectuer des calculs et de modifier des informations.</p>
+<section id="types-de-nombres">
+<h3>Types de nombres :<a class="headerlink" href="#types-de-nombres" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Entiers (int)</strong> : Représentent des nombres entiers (sans virgule décimale).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_entier</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_entier</span><span class="p">)</span>  <span class="c1"># Sortie : 42</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Vous pouvez ajouter (+), soustraire (-), multiplier (*) et diviser (/) des nombres entiers en Python.</p>
+<p><strong>Opérateurs arithmétiques:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> (addition)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> (soustraction)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> (multiplication)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> (division)</p>
+<ul class="simple">
+<li><p><strong>Remarque:</strong> La division par zéro entraîne une erreur (<code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>) en Python.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> (division entière) : Renvoie le quotient entier de la division, sans décimales.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> (modulo) : Renvoie le reste de la division.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> (exposant): Python utilise deux symboles de multiplication pour représenter les exposants</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">somme</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">5</span>
+<span class="n">produit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">division</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Résultat : 5.0 (nombre à virgule flottante)</span>
+<span class="n">quotient_entier</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Résultat : 5 (entier)</span>
+<span class="n">reste</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span>  <span class="c1"># Résultat : 1 (reste de la division)</span>
+<span class="n">exposant</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># Résultat : 4 (2 au carrés)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Somme : </span><span class="si">{</span><span class="n">somme</span><span class="si">}</span><span class="s2">, Différence : </span><span class="si">{</span><span class="n">difference</span><span class="si">}</span><span class="s2">, Produit : </span><span class="si">{</span><span class="n">produit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Division : </span><span class="si">{</span><span class="n">division</span><span class="si">}</span><span class="s2">, Quotient entier : </span><span class="si">{</span><span class="n">quotient_entier</span><span class="si">}</span><span class="s2">, Reste : </span><span class="si">{</span><span class="n">reste</span><span class="si">}</span><span class="s2">, Exposant: </span><span class="si">{</span><span class="n">exposant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_entier</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_entier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">somme</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">5</span>
+<span class="n">produit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">division</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Résultat : 5.0 (nombre à virgule flottante)</span>
+<span class="n">quotient_entier</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Résultat : 5 (entier)</span>
+<span class="n">reste</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span>  <span class="c1"># Résultat : 1 (reste de la division)</span>
+<span class="n">exposant</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># Résultat : 4 (2 au carrés)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Somme : </span><span class="si">{</span><span class="n">somme</span><span class="si">}</span><span class="s2">, Différence : </span><span class="si">{</span><span class="n">difference</span><span class="si">}</span><span class="s2">, Produit : </span><span class="si">{</span><span class="n">produit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Division : </span><span class="si">{</span><span class="n">division</span><span class="si">}</span><span class="s2">, Quotient entier : </span><span class="si">{</span><span class="n">quotient_entier</span><span class="si">}</span><span class="s2">, Reste : </span><span class="si">{</span><span class="n">reste</span><span class="si">}</span><span class="s2">,  Exposant: </span><span class="si">{</span><span class="n">exposant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Somme : 15, Différence : 5, Produit : 20
+Division : 5.0, Quotient entier : 5, Reste : 1,  Exposant: 4
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Décimales</strong>:</p></li>
+</ul>
+<p>Représentent des nombres pouvant contenir une virgule décimale pour des valeurs décimales précises.
+Pour la plupart, vous pouvez utiliser des décimales sans vous soucier de leur comportement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_flottant</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_flottant</span><span class="p">)</span>  <span class="c1"># Sortie : 3.14159</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre_flottant</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_flottant</span><span class="p">)</span>  <span class="c1"># Sortie : 3.14159</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14159
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mais sachez que vous pouvez parfois obtenir un nombre arbitraire de décimales dans votre réponse:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsque vous divisez deux nombres, même s’il s’agit d’entiers qui donnent un nombre entier, vous obtenez toujours un flottement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si vous mélangez un entier et un flotteur dans toute autre opération, vous obtiendrez un flotter également:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">3.0</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python utilise par défaut un float dans toute opération qui utilise un float, même si la sortie est un nombre entier.</p>
+</section>
+<section id="traits-de-soulignement-dans-les-nombres">
+<h3>Traits de soulignement dans les nombres :<a class="headerlink" href="#traits-de-soulignement-dans-les-nombres" title="Link to this heading">#</a></h3>
+<p>Depuis Python 3.6, vous pouvez inclure des traits de soulignement (<code class="docutils literal notranslate"><span class="pre">_</span></code>) pour améliorer la lisibilité des grands nombres. Ces traits de soulignement n’affectent pas la valeur du nombre.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grand_nombre</span> <span class="o">=</span> <span class="mi">1_234_567_890</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grand_nombre</span><span class="p">)</span>  <span class="c1"># Sortie : 1234567890</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grand_nombre</span> <span class="o">=</span> <span class="mi">1_234_567_890</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grand_nombre</span><span class="p">)</span>  <span class="c1"># Sortie : 1234567890</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1234567890
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Remarque importante :</strong> Les traits de soulignement dans les nombres ne sont <strong>pas</strong> des séparateurs de milliers comme dans certains pays. Ils servent uniquement à améliorer la lisibilité.</p>
+</section>
+<section id="affectations-multiples">
+<h3>Affectations multiples :<a class="headerlink" href="#affectations-multiples" title="Link to this heading">#</a></h3>
+<p>Python permet d’affecter des valeurs à plusieurs variables en une seule ligne, ce qui est particulièrement utile pour des initialisations groupées.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span><span class="p">,</span> <span class="n">prenom</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Martin&quot;</span><span class="p">,</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nom : </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">, Prénom : </span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2">, Âge : </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Sortie : Nom : Alice, Prénom : Martin, Âge : 30</span>
+</pre></div>
+</div>
+</section>
+<section id="essayez-vous-meme-testez-vos-connaissances">
+<h3>Essayez vous-même (Testez vos connaissances)<a class="headerlink" href="#essayez-vous-meme-testez-vos-connaissances" title="Link to this heading">#</a></h3>
+<p>Maintenant que vous avez découvert les expressions, les types de nombres, les traits de soulignement et les affectations multiples, testez vos acquis en Python!</p>
+<p><strong>Exercice 1 : Calcul et affichage</strong></p>
+<ul class="simple">
+<li><p>Calculez la surface d’un rectangle en multipliant sa longueur (5 mètres) par sa largeur (3 mètres).</p></li>
+<li><p>Stockez le résultat dans une variable nommée <code class="docutils literal notranslate"><span class="pre">surface</span></code>.</p></li>
+<li><p>Affichez la surface calculée à l’écran.</p></li>
+</ul>
+<p><strong>Solution:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">longueur</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># mètres</span>
+<span class="n">largeur</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># mètres</span>
+
+<span class="n">surface</span> <span class="o">=</span> <span class="n">longueur</span> <span class="o">*</span> <span class="n">largeur</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La surface du rectangle est de </span><span class="si">{</span><span class="n">surface</span><span class="si">}</span><span class="s2"> mètres carrés.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exercice 2 : Conversion de devises</strong></p>
+<ul class="simple">
+<li><p>Créez deux variables : <code class="docutils literal notranslate"><span class="pre">taux_de_change</span></code> (taux de change euro vers dollar) et <code class="docutils literal notranslate"><span class="pre">montant_en_euros</span></code>.</p></li>
+<li><p>Demandez à l’utilisateur de saisir le montant en euros à convertir.</p></li>
+<li><p>Calculez l’équivalent en dollars en multipliant le montant en euros par le taux de change.</p></li>
+<li><p>Affichez le montant converti à l’écran, en indiquant clairement qu’il s’agit de dollars.</p></li>
+</ul>
+<p><strong>Solution:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">taux_de_change</span> <span class="o">=</span> <span class="mf">1.1</span>  <span class="c1"># dollars par euro (exemple)</span>
+<span class="n">montant_en_euros</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisissez le montant en euros à convertir : &quot;</span><span class="p">))</span>
+
+<span class="n">montant_en_dollars</span> <span class="o">=</span> <span class="n">montant_en_euros</span> <span class="o">*</span> <span class="n">taux_de_change</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le montant converti en dollars est de </span><span class="si">{</span><span class="n">montant_en_dollars</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> $ US.&quot;</span><span class="p">)</span>  <span class="c1"># Affichage avec 2 décimales</span>
+</pre></div>
+</div>
+<p><strong>Exercice 3 : Opérateurs de comparaison</strong></p>
+<ul class="simple">
+<li><p>Définissez deux variables, <code class="docutils literal notranslate"><span class="pre">age_minimum</span></code> et <code class="docutils literal notranslate"><span class="pre">age_utilisateur</span></code>.</p></li>
+<li><p>Vérifiez si l’âge de l’utilisateur est supérieur ou égal à l’âge minimum requis.</p></li>
+<li><p>Affichez un message indiquant si l’utilisateur est autorisé à effectuer une action en fonction de son âge.</p></li>
+</ul>
+<p><strong>Solution:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age_minimum</span> <span class="o">=</span> <span class="mi">18</span>  <span class="c1"># Exemple d&#39;âge minimum</span>
+<span class="n">age_utilisateur</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisissez votre âge : &quot;</span><span class="p">))</span>
+
+<span class="n">est_autorise</span> <span class="o">=</span> <span class="n">age_utilisateur</span> <span class="o">&gt;=</span> <span class="n">age_minimum</span>
+
+<span class="k">if</span> <span class="n">est_autorise</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vous êtes autorisé à effectuer cette action.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vous ne remplissez pas les conditions d&#39;âge requises.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En effectuant ces exercices, vous pourrez mettre en pratique vos connaissances sur les expressions, les nombres, les affectations multiples et les opérateurs en Python. N’hésitez pas à expérimenter et à créer vos propres programmes!</p>
+</section>
+</section>
+<section id="commentaires-en-python-et-la-philosophie-de-python-zen-of-python">
+<h2>Commentaires en Python et la Philosophie de Python (Zen of Python)<a class="headerlink" href="#commentaires-en-python-et-la-philosophie-de-python-zen-of-python" title="Link to this heading">#</a></h2>
+<p>En Python, les commentaires sont des lignes de code ignorées par l’interpréteur lors de l’exécution du programme. Ils servent à :</p>
+<ul class="simple">
+<li><p><strong>Expliquer le code:</strong> Fournissent des explications sur ce que fait le code, améliorant la lisibilité et la compréhension pour vous-même et pour les autres développeurs.</p></li>
+<li><p><strong>Documenter le programme:</strong> Permettent d’ajouter des informations sur le fonctionnement du programme, son objectif et son utilisation.</p></li>
+<li><p><strong>Rappeler des points importants:</strong> Aident à vous souvenir de la logique et des décisions prises lors de la programmation.</p></li>
+<li><p><strong>Désactiver temporairement du code:</strong>  En commentant des sections de code, vous pouvez les désactiver temporairement à des fins de test ou de débogage sans supprimer le code.</p></li>
+</ul>
+<p>Il existe deux types de commentaires en Python :</p>
+<ul>
+<li><p><strong>Commentaires sur une seule ligne:</strong> Commencez par le symbole <code class="docutils literal notranslate"><span class="pre">#</span></code>. Tout texte suivant ce symbole est ignoré par l’interpréteur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ceci est un commentaire sur une seule ligne.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Variable pour stocker une valeur</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Commentaires multilignes:</strong> Entourés par des triples guillemets (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">'''</span></code>). Ils s’étendent sur plusieurs lignes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Ceci est un commentaire</span>
+<span class="sd">qui s&#39;étend sur plusieurs lignes.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">nombre</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># Le commentaire explique la signification de la variable &#39;nombre&#39;.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<section id="pourquoi-les-commentaires-sont-ils-importants">
+<h3>Pourquoi les commentaires sont-ils importants ?<a class="headerlink" href="#pourquoi-les-commentaires-sont-ils-importants" title="Link to this heading">#</a></h3>
+<p>Les commentaires sont essentiels pour plusieurs raisons :</p>
+<ul class="simple">
+<li><p><strong>Lisibilité du code:</strong> Un code bien commenté est plus facile à comprendre, à maintenir et à modifier, tant pour vous que pour les autres développeurs.</p></li>
+<li><p><strong>Collaboration:</strong> Les commentaires facilitent la collaboration sur des projets en équipe, car ils permettent à chaque développeur de comprendre la logique et l’objectif du code.</p></li>
+<li><p><strong>Débogage:</strong> Les commentaires peuvent vous aider à identifier les erreurs et à déboguer votre code plus facilement.</p></li>
+</ul>
+</section>
+<section id="la-philosophie-de-python-zen-of-python">
+<h3>La Philosophie de Python (Zen of Python)<a class="headerlink" href="#la-philosophie-de-python-zen-of-python" title="Link to this heading">#</a></h3>
+<p>Le Zen of Python, également connu sous le nom de PEP 20, est un ensemble de 20 aphorismes (proverbes) qui reflètent la philosophie et les principes de conception du langage Python. Ces aphorismes mettent l’accent sur la simplicité, la lisibilité, la praticité et l’élégance du code.</p>
+<p>Voici quelques exemples d’aphorismes du Zen of Python :</p>
+<ul class="simple">
+<li><p><strong>Beautiful is better than ugly.</strong> (Beau est mieux que laid) - Le code doit être bien écrit, lisible et facile à comprendre.</p></li>
+<li><p><strong>Explicit is better than implicit.</strong> (Explicite est mieux qu’implicite) - Le code doit être clair et direct, sans ambiguïté.</p></li>
+<li><p><strong>Simple is better than complex.</strong> (Simple est mieux que complexe) - Le code doit être aussi simple et direct que possible pour accomplir la tâche.</p></li>
+</ul>
+<p>En suivant ces principes et en utilisant des commentaires judicieusement, vous pouvez écrire du code Python plus clair, maintenable et élégant, respectant la philosophie du langage.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="markdown.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Markdown Files</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>Variables</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-variables"><strong>Noms de variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notre-premier-bug-name-errors"><strong>Notre premier bug 🐛: <em>Name Errors</em></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaine-de-caracteres"><strong>Chaîne de caractères</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-avec-chaines"><strong>Opérations avec chaînes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexation-et-decoupage"><strong>Indexation et découpage:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation"><strong>Concaténation:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replication"><strong>Réplication:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recherche"><strong>Recherche:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remplacement"><strong>Remplacement</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-casse"><strong>Conversion de casse</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#suppression-d-espaces-superflus"><strong>Suppression d’espaces superflus</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#division"><strong>Division</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-d-appartenance"><strong>Vérification d’appartenance</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ajout-d-espaces-aux-chaines-de-caracteres-avec-des-tabulations-ou-des-sauts-de-ligne"><strong>Ajout d’espaces aux chaînes de caractères avec des tabulations ou des sauts de ligne</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings-chaines-litterales-formatees"><strong>f-strings (chaînes littérales formatées):</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formatage-de-chaines"><strong>Formatage de chaînes</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-d-erreurs-pouvant-survenir-lors-des-operations-avec-des-chaines-et-solutions"><strong>Types d’erreurs pouvant survenir lors des opérations avec des chaînes et solutions</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror"><strong>IndexError</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror"><strong>TypeError:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vous-meme"><strong>Vous-même</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre"><strong>Nombre</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-nombres">Types de nombres :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traits-de-soulignement-dans-les-nombres">Traits de soulignement dans les nombres :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#affectations-multiples">Affectations multiples :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#essayez-vous-meme-testez-vos-connaissances">Essayez vous-même (Testez vos connaissances)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commentaires-en-python-et-la-philosophie-de-python-zen-of-python">Commentaires en Python et la Philosophie de Python (Zen of Python)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-les-commentaires-sont-ils-importants">Pourquoi les commentaires sont-ils importants ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-philosophie-de-python-zen-of-python">La Philosophie de Python (Zen of Python)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brice Donald Abodo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
