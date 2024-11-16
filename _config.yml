@@ -2,7 +2,7 @@
 
 title: Apprendre python simple
 author: Brice Donald Abodo
-logo: logo.png
+logo: static/logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -27,9 +27,31 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  title: "Monthy Python With Brice"
+  description: "Découvrez notre Jupyter Book dédié à l'apprentissage de Python pour les francophones. Trouvez des tutoriels détaillés, des scripts de code, et des ressources complémentaires alignés avec nos vidéos YouTube. Idéal pour débutants et développeurs avancés !"
+  canonical_url: "https://boodscode237.github.io"  # The canonical URL of your site
+  theme:
+    options:
+      metadata:
+        author: "Monthy Python Avec Brice"
+        description: "Apprenez Python grâce à des tutoriels détaillés en français. Retrouvez des scripts, des ressources et des explications claires pour débutants et experts."
+        keywords: "Python, programmation, tutoriels, apprentissage, développement"
+        robots: "index, follow"
+  metadata:
+    og:title: "Monthy Python Avec Brice"
+    og:type: "website"
+    og:url: "https://boodscode237.github.io"
+    og:image: "https://boodscode237.github.io/_static/logo.png"  # Image d'aperçu pour les réseaux sociaux
+    og:description: "Apprenez Python facilement avec des tutoriels en français, des scripts, et des ressources pour débutants et experts."
+    twitter:card: "summary_large_image"
+    twitter:site: "@monthybrice"
+    twitter:title: "Monthy Python Avec Brice"
+    twitter:description: "Apprenez Python grâce à des tutoriels détaillés, des exemples de code et des ressources pratiques, en français."
+    twitter:image: "https://boodscode237.github.io/_static/logo.png"
   use_issues_button: true
   use_repository_button: true
   use_multitoc_numbering: false
+  favicon: "_static/favicon.ico"
 
 launch_buttons:
   notebook_interface: "jupyterlab"  # or "classic"
