@@ -16,4 +16,3 @@ parts:
   - caption: Les Listes
     chapters:
       - file: 02_lists_intro
-      - file: markdown
